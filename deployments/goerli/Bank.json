@@ -1,0 +1,173 @@
+{
+  "address": "0x2047fa1d51152dfa015559fc531b336451bcbbf9",
+  "abi": [
+    {
+      "inputs": [],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "inputs": [],
+      "name": "Bank__NotAllowedRequest",
+      "type": "error"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "tokenSymbol",
+          "type": "bytes32"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "tokenAddress",
+          "type": "address"
+        }
+      ],
+      "name": "NewTokenListed",
+      "type": "event"
+    },
+    {
+      "inputs": [],
+      "name": "getOwner",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "tokenSymbol_",
+          "type": "bytes32"
+        }
+      ],
+      "name": "getWhiteListedTokenAddress",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getWhiteListedTokens",
+      "outputs": [
+        {
+          "internalType": "bytes32[]",
+          "name": "",
+          "type": "bytes32[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "tokenAddress",
+          "type": "address"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "symbol",
+          "type": "bytes32"
+        }
+      ],
+      "name": "whiteListToken",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0x953a1b8c9ba990edb152293aff611a5b7d871095f6d26dceaf92bdfca6d467be",
+  "receipt": {
+    "to": null,
+    "from": "0xbf0b2d77f5095a28a48c7e57be99841434fbbb26",
+    "contractAddress": "0x2047fa1d51152dfa015559fc531b336451bcbbf9",
+    "transactionIndex": "0x1f",
+    "gasUsed": "0x525b9",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0x66ac232d5da6b433f9c5ffe134a8ac24cd3e9dfcccc5d5dc5ac0bea0a820d486",
+    "transactionHash": "0x953a1b8c9ba990edb152293aff611a5b7d871095f6d26dceaf92bdfca6d467be",
+    "logs": [],
+    "blockNumber": "0x73575d",
+    "cumulativeGasUsed": "0x89b4fe",
+    "status": "0x1"
+  },
+  "args": [],
+  "numDeployments": 1,
+  "solcInputHash": "f9745d4e14c0d98fa3cb6619d293cf8e",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.9+commit.e5eed63a\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[],\"name\":\"Bank__NotAllowedRequest\",\"type\":\"error\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"tokenSymbol\",\"type\":\"bytes32\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"tokenAddress\",\"type\":\"address\"}],\"name\":\"NewTokenListed\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"getOwner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"tokenSymbol_\",\"type\":\"bytes32\"}],\"name\":\"getWhiteListedTokenAddress\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getWhiteListedTokens\",\"outputs\":[{\"internalType\":\"bytes32[]\",\"name\":\"\",\"type\":\"bytes32[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"tokenAddress\",\"type\":\"address\"},{\"internalType\":\"bytes32\",\"name\":\"symbol\",\"type\":\"bytes32\"}],\"name\":\"whiteListToken\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/Bank.sol\":\"Bank\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"contracts/Bank.sol\":{\"content\":\"// SPDX-License-Identifier: UNLICENSED\\npragma solidity ^0.8.9;\\n\\n// Uncomment this line to use console.log\\n// import \\\"hardhat/console.sol\\\";\\n\\nerror Bank__NotAllowedRequest();\\n\\ncontract Bank {\\n    address private immutable i_owner;\\n    bytes32[] private s_whiteListedTokens;\\n    mapping(bytes32 => address) s_whiteListedTokenAddress;\\n\\n    // Events\\n    event NewTokenListed(\\n        bytes32 indexed tokenSymbol,\\n        address indexed tokenAddress\\n    );\\n\\n    constructor() {\\n        i_owner = msg.sender;\\n    }\\n\\n    function whiteListToken(address tokenAddress, bytes32 symbol) public {\\n        if (msg.sender != i_owner) {\\n            revert Bank__NotAllowedRequest();\\n        }\\n\\n        s_whiteListedTokens.push(symbol);\\n        s_whiteListedTokenAddress[symbol] = tokenAddress;\\n        emit NewTokenListed(symbol, tokenAddress);\\n    }\\n\\n    // View / Pure functions\\n    function getWhiteListedTokens() public view returns (bytes32[] memory) {\\n        return s_whiteListedTokens;\\n    }\\n\\n    function getWhiteListedTokenAddress(bytes32 tokenSymbol_)\\n        public\\n        view\\n        returns (address)\\n    {\\n        return s_whiteListedTokenAddress[tokenSymbol_];\\n    }\\n\\n    function getOwner() public view returns (address) {\\n        return i_owner;\\n    }\\n}\\n\",\"keccak256\":\"0x3c08c1cf83bd4789ca5f99805fe24066093c2765e1f08ee0839d36470ce064f8\",\"license\":\"UNLICENSED\"}},\"version\":1}",
+  "bytecode": "0x60a060405234801561001057600080fd5b503373ffffffffffffffffffffffffffffffffffffffff1660808173ffffffffffffffffffffffffffffffffffffffff16815250506080516105246100666000396000818160dd015261019801526105246000f3fe608060405234801561001057600080fd5b506004361061004c5760003560e01c8063893d20e81461005157806399da57881461006f578063d056bb101461008d578063e10bffbd146100bd575b600080fd5b6100596100d9565b604051610066919061031f565b60405180910390f35b610077610101565b6040516100849190610402565b60405180910390f35b6100a760048036038101906100a29190610455565b610159565b6040516100b4919061031f565b60405180910390f35b6100d760048036038101906100d291906104ae565b610196565b005b60007f0000000000000000000000000000000000000000000000000000000000000000905090565b6060600080548060200260200160405190810160405280929190818152602001828054801561014f57602002820191906000526020600020905b81548152602001906001019080831161013b575b5050505050905090565b60006001600083815260200190815260200160002060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff169050919050565b7f000000000000000000000000000000000000000000000000000000000000000073ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161461021b576040517f8bd330a100000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b6000819080600181540180825580915050600190039060005260206000200160009091909190915055816001600083815260200190815260200160002060006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055508173ffffffffffffffffffffffffffffffffffffffff16817f4470705eb0a34d6fdb4cecb237975b9f0697a85808725ec292e31358ae81774460405160405180910390a35050565b600073ffffffffffffffffffffffffffffffffffffffff82169050919050565b6000610309826102de565b9050919050565b610319816102fe565b82525050565b60006020820190506103346000830184610310565b92915050565b600081519050919050565b600082825260208201905092915050565b6000819050602082019050919050565b6000819050919050565b61037981610366565b82525050565b600061038b8383610370565b60208301905092915050565b6000602082019050919050565b60006103af8261033a565b6103b98185610345565b93506103c483610356565b8060005b838110156103f55781516103dc888261037f565b97506103e783610397565b9250506001810190506103c8565b5085935050505092915050565b6000602082019050818103600083015261041c81846103a4565b905092915050565b600080fd5b61043281610366565b811461043d57600080fd5b50565b60008135905061044f81610429565b92915050565b60006020828403121561046b5761046a610424565b5b600061047984828501610440565b91505092915050565b61048b816102fe565b811461049657600080fd5b50565b6000813590506104a881610482565b92915050565b600080604083850312156104c5576104c4610424565b5b60006104d385828601610499565b92505060206104e485828601610440565b915050925092905056fea264697066735822122090efbc03153d890c56986cc6885591b57ccbe8f25274a5a3463bec9d23a868d364736f6c63430008090033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061004c5760003560e01c8063893d20e81461005157806399da57881461006f578063d056bb101461008d578063e10bffbd146100bd575b600080fd5b6100596100d9565b604051610066919061031f565b60405180910390f35b610077610101565b6040516100849190610402565b60405180910390f35b6100a760048036038101906100a29190610455565b610159565b6040516100b4919061031f565b60405180910390f35b6100d760048036038101906100d291906104ae565b610196565b005b60007f0000000000000000000000000000000000000000000000000000000000000000905090565b6060600080548060200260200160405190810160405280929190818152602001828054801561014f57602002820191906000526020600020905b81548152602001906001019080831161013b575b5050505050905090565b60006001600083815260200190815260200160002060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff169050919050565b7f000000000000000000000000000000000000000000000000000000000000000073ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161461021b576040517f8bd330a100000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b6000819080600181540180825580915050600190039060005260206000200160009091909190915055816001600083815260200190815260200160002060006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055508173ffffffffffffffffffffffffffffffffffffffff16817f4470705eb0a34d6fdb4cecb237975b9f0697a85808725ec292e31358ae81774460405160405180910390a35050565b600073ffffffffffffffffffffffffffffffffffffffff82169050919050565b6000610309826102de565b9050919050565b610319816102fe565b82525050565b60006020820190506103346000830184610310565b92915050565b600081519050919050565b600082825260208201905092915050565b6000819050602082019050919050565b6000819050919050565b61037981610366565b82525050565b600061038b8383610370565b60208301905092915050565b6000602082019050919050565b60006103af8261033a565b6103b98185610345565b93506103c483610356565b8060005b838110156103f55781516103dc888261037f565b97506103e783610397565b9250506001810190506103c8565b5085935050505092915050565b6000602082019050818103600083015261041c81846103a4565b905092915050565b600080fd5b61043281610366565b811461043d57600080fd5b50565b60008135905061044f81610429565b92915050565b60006020828403121561046b5761046a610424565b5b600061047984828501610440565b91505092915050565b61048b816102fe565b811461049657600080fd5b50565b6000813590506104a881610482565b92915050565b600080604083850312156104c5576104c4610424565b5b60006104d385828601610499565b92505060206104e485828601610440565b915050925092905056fea264697066735822122090efbc03153d890c56986cc6885591b57ccbe8f25274a5a3463bec9d23a868d364736f6c63430008090033",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [
+      {
+        "astId": 8,
+        "contract": "contracts/Bank.sol:Bank",
+        "label": "s_whiteListedTokens",
+        "offset": 0,
+        "slot": "0",
+        "type": "t_array(t_bytes32)dyn_storage"
+      },
+      {
+        "astId": 12,
+        "contract": "contracts/Bank.sol:Bank",
+        "label": "s_whiteListedTokenAddress",
+        "offset": 0,
+        "slot": "1",
+        "type": "t_mapping(t_bytes32,t_address)"
+      }
+    ],
+    "types": {
+      "t_address": {
+        "encoding": "inplace",
+        "label": "address",
+        "numberOfBytes": "20"
+      },
+      "t_array(t_bytes32)dyn_storage": {
+        "base": "t_bytes32",
+        "encoding": "dynamic_array",
+        "label": "bytes32[]",
+        "numberOfBytes": "32"
+      },
+      "t_bytes32": {
+        "encoding": "inplace",
+        "label": "bytes32",
+        "numberOfBytes": "32"
+      },
+      "t_mapping(t_bytes32,t_address)": {
+        "encoding": "mapping",
+        "key": "t_bytes32",
+        "label": "mapping(bytes32 => address)",
+        "numberOfBytes": "32",
+        "value": "t_address"
+      }
+    }
+  }
+}

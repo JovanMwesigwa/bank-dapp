@@ -1,0 +1,35 @@
+{
+  "language": "Solidity",
+  "sources": {
+    "contracts/Bank.sol": {
+      "content": "// SPDX-License-Identifier: UNLICENSED\npragma solidity ^0.8.9;\n\n// Uncomment this line to use console.log\n// import \"hardhat/console.sol\";\n\nerror Bank__NotAllowedRequest();\n\ncontract Bank {\n    address private immutable i_owner;\n    bytes32[] private s_whiteListedTokens;\n    mapping(bytes32 => address) s_whiteListedTokenAddress;\n\n    // Events\n    event NewTokenListed(\n        bytes32 indexed tokenSymbol,\n        address indexed tokenAddress\n    );\n\n    constructor() {\n        i_owner = msg.sender;\n    }\n\n    function whiteListToken(address tokenAddress, bytes32 symbol) public {\n        if (msg.sender != i_owner) {\n            revert Bank__NotAllowedRequest();\n        }\n\n        s_whiteListedTokens.push(symbol);\n        s_whiteListedTokenAddress[symbol] = tokenAddress;\n        emit NewTokenListed(symbol, tokenAddress);\n    }\n\n    // View / Pure functions\n    function getWhiteListedTokens() public view returns (bytes32[] memory) {\n        return s_whiteListedTokens;\n    }\n\n    function getWhiteListedTokenAddress(bytes32 tokenSymbol_)\n        public\n        view\n        returns (address)\n    {\n        return s_whiteListedTokenAddress[tokenSymbol_];\n    }\n\n    function getOwner() public view returns (address) {\n        return i_owner;\n    }\n}\n"
+    }
+  },
+  "settings": {
+    "optimizer": {
+      "enabled": false,
+      "runs": 200
+    },
+    "outputSelection": {
+      "*": {
+        "*": [
+          "abi",
+          "evm.bytecode",
+          "evm.deployedBytecode",
+          "evm.methodIdentifiers",
+          "metadata",
+          "devdoc",
+          "userdoc",
+          "storageLayout",
+          "evm.gasEstimates"
+        ],
+        "": [
+          "ast"
+        ]
+      }
+    },
+    "metadata": {
+      "useLiteralContent": true
+    }
+  }
+}
