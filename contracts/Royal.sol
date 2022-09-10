@@ -20,12 +20,14 @@ contract Royal {
     bytes32[] private s_whiteListedTokenSymbols;
     mapping(bytes32 => address) private s_listedTokenAddress;
     mapping(address => mapping(bytes32 => uint256)) private s_balances;
+    uint256 private tokensCount;
 
     // events
     event NewTokenListed(address indexed tokenAddress, bytes32 indexed _symbol);
 
     constructor() {
         i_owner = msg.sender;
+        tokensCount = 0;
     }
 
     // Main functions
@@ -35,11 +37,12 @@ contract Royal {
         }
 
         s_listedTokenAddress[symbol] = tokenAddress;
+        tokensCount += 1;
 
         emit NewTokenListed(tokenAddress, symbol);
     }
 
-    recieve() external payable {
+    function recieve() external payable {
         s_balances[msg.sender]['Eth'] += msg.value;
     }
 
@@ -84,5 +87,9 @@ contract Royal {
 
     function getTokenAddress(bytes32 _symbol) public view returns (address) {
         return s_listedTokenAddress[_symbol];
+    }
+
+    function getTokenCount() public returns (uint256) {
+        return tokensCount;
     }
 }

@@ -1,5 +1,6 @@
 require('@nomicfoundation/hardhat-toolbox')
 require('hardhat-deploy')
+require('./tasks/whitelistTokens')
 require('./tasks/checkAddress')
 require('dotenv').config()
 
